@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeeksforGeeks</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/app1/geeksforgeeks/">GeeksforGeeks Practice</a></li>
+        <li><a href="/app1/earthly/">Earthly Practice</a></li>
+    </ul>
+
+    <h1>This is GeeksforGeeks partice page.</h1>
+
+    <p>Length of str1 is {{str1 | length}}</p>
+    <p>Answer of value1 after adding 3 is {{value1 | add:"3"}}</p>
+    <p>Adding slashes to str1: {{ str1 | addslashes }}</p>
+    <p>After capfirst str2: {{ str2 | capfirst }}</p>
+    <p>Using center: "{{ str2 | center:"30" }}"</p>
+    <p>After cuting spaces from str1: {{ str1 | cut:" " }}</p>
+    <p>Date: {{ date | date:"D d M Y" }}</p>
+    <p>Showing default value: {{ emptystr | default:"Empty String" }}</p>
+    <p>Sorting List of Dictonaries based of the key age: {{ lst1 | dictsort:"age" }}</p>
+    <p>Checking if the value1 is divisible by 4 or not: {{ value1 | divisibleby:"3" }}</p>
+    <p>Fomating value2: {{ value2 | filesizeformat }}</p>
+    <p>Selecting the first value of lst1: {{ lst1 | first }}</p>
+    <p>Joining the elements of lst2 as a string: {{ lst2 | join:" " }}</p>
+    <p>Selecting the last value of lst2: {{ lst2 | last }}</p>
+    <p>Convert str1 to lowescase: {{ str1 | lower }}</p>
+    <p>Making list from value2: {{ value2 | make_list }}</p>
+    <p>Randomly choosing value from lst2: {{ lst2 | random }}</p>
+    <p>Slice first three elements from lst2: {{ lst2 | slice:":3" }}</p>
+    <p>Apply slugify to str1: {{ str1 | slugify }}</p>
+    <p>Time: {{ date | time:"H:i" }}</p>
+    <p>Time count: {{ previous_date | timesince:date }}</p>
+    <p>Convert str2 to titlecase: {{ str2 | title }}</p>
+    <p>Convert lst3 to unordered_list: {{ lst3 | unordered_list }}</p>
+    <p>Convert str1 to uppercase: {{ str1 | upper }}</p>
+    <p>Word in str2: {{ str2 | wordcount }}</p>
+
+</body>
+
+</html>

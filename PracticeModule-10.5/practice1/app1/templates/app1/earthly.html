@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthly</title>
+</head>
+
+<body>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/app1/geeksforgeeks/">GeeksforGeeks Practice</a></li>
+        <li><a href="/app1/earthly/">Earthly Practice</a></li>
+    </ul>
+
+    <h1>This is Earthly practice page.</h1>
+
+    <p>Use short format for date: {{ date | date:"SHORT_DATE_FORMAT" }}</p>
+    <p>Date: {{ date | date }}</p>
+    <p>Time: {{date | time:"H\h i\m"}}</p>
+    <p>Truncate characters: {{ str1 | truncatechars:6 }}</p>
+    <p>Truncate words: {{ str2 | truncatewords:2 }}</p>
+    <p>I have {{ num1 }} phone{{ num1 | pluralize }}</p>
+    <p>I have {{ num2 }} phone{{ num2 | pluralize }}</p>
+    
+
+</body>
+
+</html>
