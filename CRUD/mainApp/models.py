@@ -10,5 +10,6 @@ class Product(models.Model):
     price = models.FloatField()
     expiry_date = models.DateTimeField(blank=True, null=True)
 
-    
+    def __str__(self):
+        return f"Product: {self.name} | Quantity: {self.quantity} | Price: {self.price} | Expiry Date: {self.expiry_date}"    
 
