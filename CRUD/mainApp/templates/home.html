@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center">Product List</h1>
+
+{% if products %}
+    <table class="table table-success table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Expiry Date</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <th scope="row">{{ product.id }}</th>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.expiry_date | date:"d M Y" }}</td>
+                    <td>
+                        <a href="{% url 'edit' product.id %}" class="btn btn-warning">Edit</a>
+                        <a href="{% url 'delete' product.id %}" class="btn btn-danger">Delete</a>
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <h3 class="text-center">No product available to view</h3>
+{% endif %}
+
+
+{% endblock %}
