@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center mb-5">Latest Blogs</h1>
+
+{% for blog in blogs %}
+<div class="card mb-3 card-style">
+    <img src="{{blog.image.url}}" class="card-img-top" style="max-height: 50vh; object-fit: cover;"
+        alt="{{ blog.title }}">
+    <div class="card-body">
+        <h5 class="card-title">{{ blog.title }}</h5>
+        <p class="card-text">Author: {{ blog.author.name }}</p>
+        <p class="card-text"><small class="text-body-secondary">Posted {{blog.date | timesince}} ago</small></p>
+        <p class="card-text">{{ blog.content }}</p>
+        <p class="card-text">
+            <small class="text-body-secondary">Categor{{ blog.categories.count | pluralize:"y,ies" }}:
+                {% for cat in blog.categories.all %}
+                <button type="button" class="btn btn-outline-success btn-sm" disabled>{{ cat.name }}</button>
+                {% endfor %}
+            </small>
+        </p>
+        <div class="mng-buttons d-flex justify-content-center gap-5">
+            <a href="{% url 'edit_blog' blog.id %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'delete_blog' blog.id %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

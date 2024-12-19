@@ -1,0 +1,22 @@
+body {
+    background-color: #69247C;
+    color: #F9E6CF;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.nav-title:hover {
+    color: black !important;
+}
+
+.footer-container {
+    background-color: #DA498D;
+    color: white;
+}
+
+.card-style{
+    background-color: #F9E6CF;
+}
