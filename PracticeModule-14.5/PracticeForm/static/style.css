@@ -1,0 +1,15 @@
+.body-container{
+    background-color: #2E5077;
+    color: #F6F4F0;
+}
+
+.nav-color{
+    background-color: #79D7BE !important;
+}
+
+.nav-link:hover {
+    background-color: #f8f9fa;
+    color: #2E5077; 
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s; 
+}
