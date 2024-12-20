@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Musician Details
+{% endblock %}
+
+
+{% block content %}
+
+<form action="" method="post" class="w-50 mx-auto border border-info rounded p-3 shadow text-dark" style="background-color: #E5E1DA;">
+    {% csrf_token %}
+    {{form | crispy}}
+    <button type="submit" class="btn btn-outline-success">Submit</button>
+</form>
+
+{% endblock %}
