@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+{% if messages %}
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+{% endif %}
+
+<h1>
+    {% if user.is_authenticated %}
+    Hello {{user}}, 
+    {% endif %}
+    Welcome to homepage!
+</h1>
+
+{% endblock %}

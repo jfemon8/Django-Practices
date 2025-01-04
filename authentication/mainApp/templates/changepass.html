@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+{% block title %}
+Change Password
+{% endblock %}
+
+{% block content %}
+
+{% if messages %}
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+{% endif %}
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="card p-4 shadow-lg" style="max-width: 500px; width: 100%; border-radius: 10px;">
+        <h3 class="text-center text-primary mb-4">Change Password</h3>
+
+        <form method="post" novalidate>
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+                {% for err in form.non_field_errors %}
+                {{ err }}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% for fm in form %}
+            <div class="mb-3">
+                {{ fm.label_tag }}
+                {{ fm|add_class:"form-control" }}
+                <div class="text-danger">{{ fm.errors|striptags }}</div>
+            </div>
+            {% endfor %}
+
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
